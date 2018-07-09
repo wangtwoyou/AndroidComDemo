@@ -8,6 +8,7 @@ import android.text.TextWatcher
 import android.util.Log
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -46,49 +47,25 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-
             }
 
             @SuppressLint("SetTextI18n")
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                Observable.just(p0)
+                str = p0.toString()
+                Observable.just(str)
                         .subscribeOn(Schedulers.newThread())
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe {
-                    tv.text = p0
+                    tv.text = str
                 }
             }
         })
-
-    }
-    /*override fun onResume() {
-        super.onResume()
-        Log.i("activity","onResume()")
-    }
-
-    override fun onStart() {
-        super.onStart()
-        Log.i("activity","onStart()")
-    }
-
-    override fun onRestart() {
-        super.onRestart()
-        Log.i("activity","onRestart()")
-    }
-
-    override fun onPause() {
-        super.onPause()
-        Log.i("activity","onPause()")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.i("activity","onDestroy()")
+        CompositeDisposable().clear()
     }
 
-    override fun onStop() {
-        super.onStop()
-        Log.i("activity","onStop()")
-    }*/
 
 }
