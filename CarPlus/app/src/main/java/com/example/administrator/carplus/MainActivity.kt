@@ -1,26 +1,20 @@
 package com.example.administrator.carplus
 
-import android.content.IntentFilter
-import android.net.ConnectivityManager
-import android.net.wifi.WifiManager
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import com.example.administrator.carplus.WIFITOOL.WifiTool
-import kotlinx.android.synthetic.main.fragment_wifi_init.*
+import com.example.administrator.carplus.fragment.FragmentLoad
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        fragment_init()
-
-
+        fragmentInit()
     }
 
-    private fun fragment_init() {
+    private fun fragmentInit() {
         supportFragmentManager.beginTransaction()
-                .add(R.id.view_window,Fragment_load())
+                .add(R.id.view_window, FragmentLoad())
                 .commitNow()
     }
 }
