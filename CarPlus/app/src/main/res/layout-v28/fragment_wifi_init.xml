@@ -35,15 +35,21 @@
         app:indicator="BallGridBeat"
         />
     <Button
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="20dp"
-        android:background="#4B0082"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
+        android:background="#fff"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="50dp"
         android:id="@+id/btn"
-        android:textColor="#fff"
+        android:textColor="#4B0082"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="直接进入控制界面"/>
+        android:text="销毁"/>
+    <ProgressBar
+        android:outlineAmbientShadowColor="@color/colorAccent"
+        android:background="#fff"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"/>
 
 </RelativeLayout>
