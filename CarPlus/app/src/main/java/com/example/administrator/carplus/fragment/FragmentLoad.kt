@@ -15,17 +15,8 @@ import android.widget.Toast
 import com.example.administrator.carplus.R
 import com.example.administrator.carplus.wifitool.WifiTool
 import kotlinx.android.synthetic.main.fragment_wifi_init.*
-/*
-* 2018/7/10 问题：1.收不到外部发送的广播  原因：使用了localBroadcastManage 解决：将localroadcastManage替换
-*                2.获取不到SSID 原因不明
-*                3.逻辑有问题 日后再改 原因 太菜
-*
-* 2018/7/11     一天都在看linux,没有碰android
-*
-* 2018/7.12       自定义的view不会设置点击事件，早点解决
-* */
-
-class FragmentLoad : Fragment() {
+/*不被使用！！！暂时弃用！！！*/
+class FragmentLoad : Fragment(){
     private var wifi: WifiTool? = null
     private var broad: BroadcastReceiver? = null
 
@@ -36,7 +27,6 @@ class FragmentLoad : Fragment() {
     override fun onStart() {
         super.onStart()
         wifiInit()
-
         val filter = IntentFilter()
         filter.addAction(WifiManager.NETWORK_STATE_CHANGED_ACTION)
         filter.addAction(WifiManager.WIFI_STATE_CHANGED_ACTION)
@@ -56,9 +46,10 @@ class FragmentLoad : Fragment() {
         }
         activity!!.registerReceiver(broad!!, filter)
         btn.setOnClickListener {
-            activity!!.supportFragmentManager.beginTransaction().replace(R.id.view_window, FragmentControl()).commitNow()
+           // activity!!.supportFragmentManager.beginTransaction().replace(R.id.view_window, FragmentControl()).commit()
         }
         //progress_change()
+
     }
 
     override fun onDestroy() {
