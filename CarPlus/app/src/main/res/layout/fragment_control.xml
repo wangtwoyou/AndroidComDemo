@@ -2,22 +2,29 @@
 <RelativeLayout
     android:id="@+id/rrr"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#4B0082">
+
     <com.example.administrator.carplus.ui.ButtonDiy
         android:id="@+id/bttn"
         android:layout_centerVertical="true"
         android:layout_width="300dp"
         android:layout_height="300dp" />
-    <Button
-        android:layout_alignParentEnd="true"
-        android:id="@+id/ff"
+    <LinearLayout
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="111"/>
-    <view class="android.support.v7.app.AlertController$RecycleListView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="start"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="stop"/>
+    </LinearLayout>
+
 </RelativeLayout>

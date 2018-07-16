@@ -11,11 +11,10 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import com.example.administrator.carplus.R
 import com.example.administrator.carplus.wifitool.WifiTool
 import kotlinx.android.synthetic.main.fragment_wifi_init.*
-/*不被使用！！！暂时弃用！！！*/
+
 class FragmentLoad : Fragment(){
     private var wifi: WifiTool? = null
     private var broad: BroadcastReceiver? = null
@@ -46,9 +45,8 @@ class FragmentLoad : Fragment(){
         }
         activity!!.registerReceiver(broad!!, filter)
         btn.setOnClickListener {
-           // activity!!.supportFragmentManager.beginTransaction().replace(R.id.view_window, FragmentControl()).commit()
+            activity!!.supportFragmentManager.beginTransaction().replace(R.id.view_window, FragmentControl()).commit()
         }
-        //progress_change()
 
     }
 
@@ -56,7 +54,6 @@ class FragmentLoad : Fragment(){
         super.onDestroy()
         if (broad != null)
             activity!!.unregisterReceiver(broad!!)
-        Toast.makeText(context, "cuihui", Toast.LENGTH_SHORT).show()
 
     }
 
@@ -77,4 +74,5 @@ class FragmentLoad : Fragment(){
             else -> wifi_flag.text = "wifi开启失败"
         }
     }
+
 }
