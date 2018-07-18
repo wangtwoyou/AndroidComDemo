@@ -21,9 +21,12 @@ import com.example.administrator.carplus.fragment.FragmentLoad
 * 2018/7.13      fragment中添加了自定义的view，但是触摸事件没有生效
 *                目前解决办法：不用fragment,改用activity，日后慢慢研究
 *
-*
 * 2018/7.16      上午：问题解决，自定义view的点击事件没问题了，上星期的问题在于，最上层有一层view遮挡，
 *                导致触摸无效，小问题是小问题，但是需要注重细节。
+*
+*
+*
+*
 * */
 
 class MainActivity : AppCompatActivity() {
@@ -38,7 +41,7 @@ class MainActivity : AppCompatActivity() {
                 .setContentTitle("这是测试欸")
                 .setContentText("这也是测试")
                 .setTicker("收到测试")
-                .setSmallIcon(null)
+                .setSmallIcon(null)//这边有问题，可能一定要设置图片
                 .build()
         manager.notify(0,mbuilder)
 
